@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.lineralayout.gridview.GridViewActivity;
 import com.example.lineralayout.listview.ListViewActivity;
 import com.example.lineralayout.recyclerview.RecyclerviewActivity;
+import com.example.lineralayout.recyclerview.WebViewActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Button mBtnTextView;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mListView;
     private Button mGridView;
     private Button mRecyclerView;
+    private Button mWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         mListView = findViewById(R.id.btn_listView);
         mGridView = findViewById(R.id.btn_gridView);
         mRecyclerView = findViewById(R.id.btn_recyclerView);
+        mWebView = findViewById(R.id.btn_webView);
         setListeners();
     }
 
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         mListView.setOnClickListener(onClick);
         mGridView.setOnClickListener(onClick);
         mRecyclerView.setOnClickListener(onClick);
+        mWebView.setOnClickListener(onClick);
 
     }
     private class OnClick implements View.OnClickListener{
@@ -87,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_recyclerView:
                     intent = new Intent(MainActivity.this, RecyclerviewActivity.class);
+                    break;
+                case R.id.btn_webView:
+                    intent = new Intent(MainActivity.this, WebViewActivity.class);
                     break;
             }
             startActivity(intent);
