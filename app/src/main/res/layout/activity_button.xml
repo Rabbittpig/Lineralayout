@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ButtonActivity"
+    android:padding="15dp">
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="按钮1"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#4CAF50"/>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/btn_1"
+        android:id="@+id/btn_2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="按钮2"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/bg_btn2"/>
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/btn_2"
+        android:id="@+id/btn_3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="按钮3"
+        android:textSize="20sp"
+        android:textColor="#FFEB3B"
+        android:background="@drawable/bg_btn3"/>
+
+
+    <Button
+        android:onClick="showToast"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/btn_3"
+        android:id="@+id/btn_4"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="按钮4"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/select_orange"/>
+    <TextView
+        android:background="#A2B110"
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:text="文字一"
+        android:layout_below="@id/btn_4"
+        android:gravity="center"
+        android:layout_marginTop="40dp"/>
+</RelativeLayout>
