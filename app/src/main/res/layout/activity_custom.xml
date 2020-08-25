@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".util.CustomDialogActivity">
     <Button
-        android:id="@+id/btn_ui"
+        android:id="@+id/btn_customDialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UI"
-        android:textAllCaps="false"
-        />
+        android:text="自定义dialog"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

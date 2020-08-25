@@ -30,7 +30,7 @@ public class WebViewActivity extends AppCompatActivity {
          */
         mWvMain.getSettings().setJavaScriptEnabled(true);
         mWvMain.setWebViewClient(new MyWebViewClient());
-//        mWvMain.setWebChromeClient();
+        mWvMain.setWebChromeClient(new MyWebChromeClient());
         mWvMain.loadUrl("https://m.baidu.com");
     }
     class MyWebViewClient extends WebViewClient{
@@ -50,11 +50,22 @@ public class WebViewActivity extends AppCompatActivity {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
             Log.d("WebView","onPageFinished...");
+//            mWvMain.loadUrl("javascript:alert('hello')");
+            mWvMain.evaluateJavascript("javascript:alert('hello')",null);
         }
     }
 
     class MyWebChromeClient extends WebChromeClient{
+        @Override
+        public void onProgressChanged(WebView view, int newProgress) {
+            super.onProgressChanged(view, newProgress);
+        }
 
+        @Override
+        public void onReceivedTitle(WebView view, String title) {
+            super.onReceivedTitle(view, title);
+            setTitle(title);
+        }
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
