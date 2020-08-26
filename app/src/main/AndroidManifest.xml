@@ -38,6 +38,7 @@
         <activity android:name=".listview.ListViewActivity" />
         <activity android:name=".gridview.GridViewActivity" />
         <activity android:name=".UIActivity" />
+        <activity android:name=".LifeCycleActivity" />
     </application>
 
 </manifest>
