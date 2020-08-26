@@ -16,6 +16,7 @@ import com.example.lineralayout.recyclerview.WebViewActivity;
 import com.example.lineralayout.util.CustomDialogActivity;
 import com.example.lineralayout.util.ProgressActivity;
 import com.example.lineralayout.widget.CustomDialog;
+import com.example.lineralayout.widget.PopupWindowActivity;
 
 public class UIActivity extends AppCompatActivity {
     private Button mBtnTextView;
@@ -32,11 +33,13 @@ public class UIActivity extends AppCompatActivity {
     private Button mDialog;
     private Button mProgress;
     private Button mCustomDialog;
+    private Button mPopupWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui);
+
         mBtnTextView = findViewById(R.id.btn_textView);
         mBtnButton = findViewById(R.id.btn_button);
         mEditText = findViewById(R.id.btn_edit);
@@ -51,6 +54,7 @@ public class UIActivity extends AppCompatActivity {
         mDialog = findViewById(R.id.btn_dialog);
         mProgress = findViewById(R.id.btn_progress);
         mCustomDialog = findViewById(R.id.btn_custom_Dialog);
+        mPopupWindow = findViewById(R.id.btn_popup_Window);
         setListeners();
     }
 
@@ -70,6 +74,7 @@ public class UIActivity extends AppCompatActivity {
         mDialog.setOnClickListener(onClick);
         mProgress.setOnClickListener(onClick);
         mCustomDialog.setOnClickListener(onClick);
+        mPopupWindow.setOnClickListener(onClick);
 
     }
     private class OnClick implements View.OnClickListener{
@@ -120,6 +125,9 @@ public class UIActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_custom_Dialog:
                     intent = new Intent(UIActivity.this, CustomDialogActivity.class);
+                    break;
+                case R.id.btn_popup_Window:
+                    intent = new Intent(UIActivity.this, PopupWindowActivity.class);
                     break;
             }
             startActivity(intent);

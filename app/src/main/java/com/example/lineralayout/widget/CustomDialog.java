@@ -36,7 +36,7 @@ public class CustomDialog extends Dialog implements View.OnClickListener {
 
     public CustomDialog setCancel(String cancel, IOnCancelListener listener) {
         this.cancel = cancel;
-        this.cancelListener = (IOnCancelListener) listener;
+        this.cancelListener = listener;
         return this;
     }
 
