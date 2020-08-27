@@ -7,9 +7,14 @@
     tools:context=".jump.FirstActivity"
     android:orientation="vertical">
     <Button
-        android:id="@+id/btn_jumpS"
+        android:id="@+id/btn_jump"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="跳转第二个页面"/>
+    <Button
+        android:id="@+id/jump_2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="jump"/>
 
 </LinearLayout>

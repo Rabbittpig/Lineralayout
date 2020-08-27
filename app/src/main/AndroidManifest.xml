@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".jump.SecondActivity"
-            android:label="Second">
+            android:label="Second"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="com.intent.test.SecondActivity" />
 
@@ -20,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".jump.FirstActivity"
-            android:label="first"/>
+            android:label="first"
+            android:launchMode="singleTop"/>
         <activity android:name=".widget.PopupWindowActivity" />
         <activity android:name=".util.CustomDialogActivity" />
         <activity android:name=".util.ProgressActivity" />
