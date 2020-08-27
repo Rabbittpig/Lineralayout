@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lineralayout.jump.FirstActivity;
+
 public class MainActivity extends AppCompatActivity {
     private Button mBtnUI;
     private Button mBtnLifeCycle;
+    private Button mBtnJump;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +20,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mBtnUI = findViewById(R.id.btn_ui);
         mBtnLifeCycle = findViewById(R.id.btn_lifecycle);
+        mBtnJump = findViewById(R.id.btn_jump);
         OnClick onClick = new OnClick();
         mBtnUI.setOnClickListener(onClick);
         mBtnLifeCycle.setOnClickListener(onClick);
+        mBtnJump.setOnClickListener(onClick);
+
     }
 
     class OnClick implements View.OnClickListener{
@@ -32,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_lifecycle:
                     intent =new Intent(MainActivity.this, LifeCycleActivity.class);
+                    break;
+                case R.id.btn_jump:
+                    intent =new Intent(MainActivity.this, FirstActivity.class);
                     break;
             }
             startActivity(intent);
