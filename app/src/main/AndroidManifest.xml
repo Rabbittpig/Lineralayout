@@ -11,18 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".jump.SecondActivity"
-            android:label="Second"
-            android:launchMode="singleTop">
+        <activity android:name=".fragment.ContainerActivity"></activity>
+        <activity
+            android:name=".jump.SecondActivity"
+            android:label="Second">
             <intent-filter>
                 <action android:name="com.intent.test.SecondActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".jump.FirstActivity"
-            android:label="first"
-            android:launchMode="singleTop"/>
+        <activity
+            android:name=".jump.FirstActivity"
+            android:label="first" />
         <activity android:name=".widget.PopupWindowActivity" />
         <activity android:name=".util.CustomDialogActivity" />
         <activity android:name=".util.ProgressActivity" />
