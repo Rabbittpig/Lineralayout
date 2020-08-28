@@ -17,8 +17,9 @@ import com.example.lineralayout.R;
 
 public class AFragment extends android.app.Fragment {
     private TextView mTvTitle;
-    private Button mBtnChange, mBtnReset;
+    private Button mBtnChange, mBtnReset,mBtnMessage;
     private BFragment bFragment;
+    private IOnMessageClick listener;
 
     public static AFragment newInstance(String title) {
         AFragment fragment = new AFragment();
@@ -26,6 +27,21 @@ public class AFragment extends android.app.Fragment {
         bundle.putString("title", title);
         fragment.setArguments(bundle);
         return fragment;
+    }
+
+    public  interface IOnMessageClick{
+        void onClick(String text);
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try{
+            listener = (IOnMessageClick) context;
+        }catch (ClassCastException e){
+            throw new ClassCastException("Activity 必须实现IOnMessageClick接口");
+        }
+
     }
 
     @Nullable
@@ -43,6 +59,14 @@ public class AFragment extends android.app.Fragment {
         mTvTitle = view.findViewById(R.id.tv_title);
         mBtnChange = view.findViewById(R.id.btn_change);
         mBtnReset = view.findViewById(R.id.btn_reset);
+        mBtnMessage = view.findViewById(R.id.btn_message);
+        mBtnMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                ((ContainerActivity)getActivity()).setData("你好");
+                listener.onClick("你好");
+            }
+        });
         mBtnChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
