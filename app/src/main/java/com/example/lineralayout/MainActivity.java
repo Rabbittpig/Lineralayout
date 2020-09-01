@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnLifeCycle;
     private Button mBtnJump;
     private Button mBtnFragment;
-    private Button mBtnEvent;
+    private Button mBtnEvent,mHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         mBtnJump = findViewById(R.id.btn_jump);
         mBtnFragment = findViewById(R.id.btn_fragment);
         mBtnEvent = findViewById(R.id.btn_event);
+        mHandler = findViewById(R.id.btn_handler);
         OnClick onClick = new OnClick();
         mBtnUI.setOnClickListener(onClick);
+        mHandler.setOnClickListener(onClick);
         mBtnLifeCycle.setOnClickListener(onClick);
         mBtnJump.setOnClickListener(onClick);
         mBtnFragment.setOnClickListener(onClick);
@@ -53,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_event:
                     intent =new Intent(MainActivity.this, EventActivity.class);
+                    break;
+                case R.id.btn_handler:
+                    intent =new Intent(MainActivity.this, HandlerActivity.class);
                     break;
             }
             startActivity(intent);
