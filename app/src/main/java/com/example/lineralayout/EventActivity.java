@@ -32,6 +32,12 @@ public class EventActivity extends AppCompatActivity {
                 return false;
             }
         });
+     btnMy.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             Log.d("Listener","---onClick---");
+         }
+     });
   /*      //内部类实现监听
         mBtnEvent.setOnClickListener(new OnClick());*/
         //匿名内部类实现监听
