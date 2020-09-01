@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lineralayout.datastorage.DataStorageActivity;
 import com.example.lineralayout.fragment.ContainerActivity;
 import com.example.lineralayout.jump.FirstActivity;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnJump;
     private Button mBtnFragment;
     private Button mBtnEvent,mHandler;
+    private Button mBtnData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnFragment = findViewById(R.id.btn_fragment);
         mBtnEvent = findViewById(R.id.btn_event);
         mHandler = findViewById(R.id.btn_handler);
+        mBtnData = findViewById(R.id.btn_data);
         OnClick onClick = new OnClick();
         mBtnUI.setOnClickListener(onClick);
         mHandler.setOnClickListener(onClick);
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnJump.setOnClickListener(onClick);
         mBtnFragment.setOnClickListener(onClick);
         mBtnEvent.setOnClickListener(onClick);
+        mBtnData.setOnClickListener(onClick);
     }
 
     class OnClick implements View.OnClickListener{
@@ -58,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_handler:
                     intent =new Intent(MainActivity.this, HandlerActivity.class);
+                    break;
+                case R.id.btn_data:
+                    intent =new Intent(MainActivity.this, DataStorageActivity.class);
                     break;
             }
             startActivity(intent);
