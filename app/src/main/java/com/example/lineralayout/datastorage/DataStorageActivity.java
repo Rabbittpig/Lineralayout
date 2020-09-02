@@ -11,6 +11,7 @@ import com.example.lineralayout.R;
 
 public class DataStorageActivity extends AppCompatActivity implements View.OnClickListener {
     private Button mBtnSp;
+    private Button mBtnFile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,8 @@ public class DataStorageActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_data_storage);
         mBtnSp = findViewById(R.id.btn_sharePreferences);
         mBtnSp.setOnClickListener(this);
+        mBtnFile = findViewById(R.id.btn_file);
+        mBtnFile.setOnClickListener(this);
     }
 
     @Override
@@ -26,6 +29,9 @@ public class DataStorageActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()){
             case R.id.btn_sharePreferences:
                 intent = new Intent(DataStorageActivity.this,SharedPreferencesActivity.class);
+                break;
+            case R.id.btn_file:
+                intent = new Intent(DataStorageActivity.this,FileActivity.class);
                 break;
         }
         startActivity(intent);
