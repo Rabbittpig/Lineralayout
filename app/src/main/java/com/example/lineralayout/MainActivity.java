@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.lineralayout.anim.ObjectAnimActivity;
+import com.example.lineralayout.broadcast.BroadActivity;
 import com.example.lineralayout.datastorage.DataStorageActivity;
 import com.example.lineralayout.fragment.ContainerActivity;
 import com.example.lineralayout.jump.FirstActivity;
@@ -22,10 +24,13 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnFragment;
     private Button mBtnEvent,mHandler;
     private Button mBtnData;
+    private Button mBtnBroadCast;
+    private Button mBtnAnim;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         mBtnUI = findViewById(R.id.btn_ui);
         mBtnLifeCycle = findViewById(R.id.btn_lifecycle);
         mBtnJump = findViewById(R.id.btn_jump);
@@ -33,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnEvent = findViewById(R.id.btn_event);
         mHandler = findViewById(R.id.btn_handler);
         mBtnData = findViewById(R.id.btn_data);
+        mBtnBroadCast = findViewById(R.id.btn_broadcast);
+        mBtnAnim = findViewById(R.id.btn_anim);
         OnClick onClick = new OnClick();
         mBtnUI.setOnClickListener(onClick);
         mHandler.setOnClickListener(onClick);
@@ -41,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnFragment.setOnClickListener(onClick);
         mBtnEvent.setOnClickListener(onClick);
         mBtnData.setOnClickListener(onClick);
+        mBtnBroadCast.setOnClickListener(onClick);
+        mBtnAnim.setOnClickListener(onClick);
         //动态申请权限
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
     }
@@ -70,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_data:
                     intent =new Intent(MainActivity.this, DataStorageActivity.class);
+                    break;
+                case R.id.btn_broadcast:
+                    intent =new Intent(MainActivity.this, BroadActivity.class);
+                    break;
+                case R.id.btn_anim:
+                    intent =new Intent(MainActivity.this, ObjectAnimActivity.class);
                     break;
             }
             startActivity(intent);
