@@ -2,12 +2,15 @@ package com.example.lineralayout.datastorage;
 
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.lineralayout.R;
+
+import java.io.File;
 import java.io.FileInputStream;
 
 import java.io.FileOutputStream;
@@ -45,7 +48,18 @@ public class FileActivity extends AppCompatActivity {
     private void save(String content) {
         FileOutputStream fileOutputStream = null;
         try {
-            fileOutputStream = openFileOutput(mFileName, MODE_PRIVATE);
+//          fileOutputStream = openFileOutput(mFileName, MODE_PRIVATE);
+            //创建文件夹
+            File dir = new File(Environment.getExternalStorageDirectory(),"skypan");
+            if(!dir.exists()){
+               dir.mkdirs();
+            }
+            //创建文件
+            File file = new File(dir,mFileName);
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            fileOutputStream = new FileOutputStream(file);
             fileOutputStream.write(content.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
@@ -64,7 +78,9 @@ public class FileActivity extends AppCompatActivity {
     private String read() {
         FileInputStream fileInputStream = null;
         try {
-            fileInputStream= openFileInput(mFileName);
+//            fileInputStream= openFileInput(mFileName);
+            File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator +"skypan",mFileName);
+            fileInputStream = new FileInputStream(file);
             byte[] buff = new byte[1024];
             StringBuilder sb = new StringBuilder("");
             int len = 0;

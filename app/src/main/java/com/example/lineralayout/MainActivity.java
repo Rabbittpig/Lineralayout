@@ -1,8 +1,11 @@
 package com.example.lineralayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnFragment.setOnClickListener(onClick);
         mBtnEvent.setOnClickListener(onClick);
         mBtnData.setOnClickListener(onClick);
+        //动态申请权限
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
     }
 
     class OnClick implements View.OnClickListener{
